@@ -69,7 +69,7 @@ The website focuses on conceptual understanding through interactive learning rat
 ├── index.html
 ├── css/
 ├── js/
-├── images/
+├── assets/
 ├── python/
 └── README.md
 ```
