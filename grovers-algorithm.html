@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grover's Algorithm — MineX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="grovers-algorithm.css" />
+  <link rel="icon" type="image/x-icon" href="assets/images/logo-cryptoMiners.png" />
+  <script src="shared.js"></script>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+   <!-- Navigation -->
+  <header class="nav">
+    <div class="nav__brand">
+      <span class="nav__logo"><img src="assets/images/logo-cryptoMiners.png" alt="MineX logo" /></span>
+      <span class="nav__name">Mine<span class="accent">-X</span></span>
+    </div>
+
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="grovers-algorithm.html">Grover Algorithm</a>
+      <a href="sha1-generator.html">SHA-1 Generator</a>
+    </nav>
+
+    <a href="faq.html" class="btn btn--primary btn--sm">FAQ</a>
+  </header>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__content">
+      <p class="hero__tag">Quantum Computing · Grover's Algorithm</p>
+      <h1 class="hero__title">
+        Grover's<br />
+        <span class="hero__title--accent">Search Algorithm</span>
+      </h1>
+      <p class="hero__desc">
+        Discover how a quantum computer can search an unsorted database of N items
+        in roughly √N steps — a quadratic speedup over classical brute force that
+        reshapes the future of cryptography and hash cracking.
+      </p>
+      <div class="hero__actions">
+        <a href="#how-it-works" class="btn btn--primary">Explore the Algorithm</a>
+        <a href="#comparison" class="btn btn--ghost">Classical vs Quantum</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat-card">
+          <span class="stat-card__value">O(√N)</span>
+          <span class="stat-card__label">Quantum Complexity</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__value">1996</span>
+          <span class="stat-card__label">Discovered by Lov Grover</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__value">π/4·√N</span>
+          <span class="stat-card__label">Optimal Iterations</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="qubit-sphere">
+        <div class="qubit-sphere__core"></div>
+        <div class="qubit-sphere__orbit qubit-sphere__orbit--1"></div>
+        <div class="qubit-sphere__orbit qubit-sphere__orbit--2"></div>
+        <div class="qubit-sphere__orbit qubit-sphere__orbit--3"></div>
+        <div class="qubit-sphere__state qubit-sphere__state--0">|0⟩</div>
+        <div class="qubit-sphere__state qubit-sphere__state--1">|1⟩</div>
+        <span class="qubit-sphere__label">|ψ⟩</span>
+      </div>
+      <div class="amplitude-bars">
+        <div class="amplitude-bars__item"><span class="amplitude-bars__bar" style="--h: 20%"></span><span>|000⟩</span></div>
+        <div class="amplitude-bars__item"><span class="amplitude-bars__bar" style="--h: 15%"></span><span>|001⟩</span></div>
+        <div class="amplitude-bars__item"><span class="amplitude-bars__bar" style="--h: 18%"></span><span>|010⟩</span></div>
+        <div class="amplitude-bars__item amplitude-bars__item--marked"><span class="amplitude-bars__bar" style="--h: 95%"></span><span>|101⟩ ★</span></div>
+        <div class="amplitude-bars__item"><span class="amplitude-bars__bar" style="--h: 12%"></span><span>|110⟩</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section" id="overview">
+    <div class="section__header">
+      <span class="section__tag">// QUANTUM SEARCH</span>
+      <h2 class="section__title">What Is Grover's Algorithm?</h2>
+      <p class="section__subtitle">
+        A quantum algorithm that solves the unstructured search problem — finding a
+        marked item in an unsorted list of N entries — faster than any classical method.
+      </p>
+    </div>
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3>The Problem</h3>
+        <p>
+          Imagine searching for one specific hash value among 2ⁿ possibilities.
+          A classical computer must check entries one by one, requiring on average
+          <strong class="accent-text">N/2</strong> attempts in the worst case.
+        </p>
+      </article>
+      <article class="overview-card">
+        <h3>The Quantum Solution</h3>
+        <p>
+          Grover's algorithm uses <strong class="accent-text">amplitude amplification</strong>
+          to increase the probability of measuring the correct answer, needing only
+          about <strong class="accent-text">√N</strong> oracle calls.
+        </p>
+      </article>
+      <article class="overview-card">
+        <h3>Key Insight</h3>
+        <p>
+          Instead of checking each item individually, quantum superposition lets the
+          algorithm explore all states simultaneously, then iteratively "rotates"
+          amplitudes toward the target.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Classical vs Quantum -->
+  <section class="section section--dark" id="comparison">
+    <div class="section__header">
+      <span class="section__tag">// COMPLEXITY ANALYSIS</span>
+      <h2 class="section__title">Classical vs Quantum</h2>
+      <p class="section__subtitle">
+        How search efficiency scales as the problem size grows.
+      </p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card compare-card--classical">
+        <span class="compare-card__label">Classical Brute Force</span>
+        <span class="compare-card__complexity">O(N)</span>
+        <p>
+          Check every possible nonce or hash until a match is found.
+          For a space of 2⁶⁴ entries, that means up to 2⁶⁴ operations.
+        </p>
+        <div class="compare-card__bar">
+          <div class="compare-card__fill compare-card__fill--slow"></div>
+        </div>
+      </div>
+      <div class="compare-card compare-card--quantum">
+        <span class="compare-card__label">Grover's Algorithm</span>
+        <span class="compare-card__complexity accent-text">O(√N)</span>
+        <p>
+          Quantum amplitude amplification finds the marked state in roughly
+          √N steps. For 2⁶⁴ entries, only about 2³² oracle queries are needed.
+        </p>
+        <div class="compare-card__bar">
+          <div class="compare-card__fill compare-card__fill--fast"></div>
+        </div>
+      </div>
+    </div>
+    <div class="formula-panel">
+      <span class="formula-panel__tag">Optimal Iterations</span>
+      <p class="formula-panel__formula">k ≈ ⌊π / 4 · √N⌋</p>
+      <p class="formula-panel__note">
+        Where N is the total number of items and k is the number of Grover iterations
+        (oracle + diffusion) before measurement.
+      </p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="section__header">
+      <span class="section__tag">// ALGORITHM STEPS</span>
+      <h2 class="section__title">How Grover's Algorithm Works</h2>
+      <p class="section__subtitle">
+        Four core phases repeated k times to amplify the correct answer.
+      </p>
+    </div>
+    <div class="video-wrapper">
+      <video class="algorithm-video" controls playsinline preload="metadata">
+        <source src="assets/videos/groverAlgorithm.mp4" type="video/mp4" />
+        <source src="assets/videos/groverAlgroithm.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+  <!-- Crypto Impact -->
+  <section class="section" id="crypto-impact">
+    <div class="section__header">
+      <span class="section__tag">// MINING & CRYPTOGRAPHY</span>
+      <h2 class="section__title">Why It Matters for Crypto</h2>
+      <p class="section__subtitle">
+        Grover's algorithm doesn't break hashing entirely — but it changes the security math.
+      </p>
+    </div>
+    <div class="impact-grid">
+      <article class="impact-card">
+        <div class="impact-card__icon">🔍</div>
+        <h3>Classical Search</h3>
+        <p>
+          Traditional miners test one nonce after another until a valid hash
+          meeting the network's difficulty is found. This process is known as
+          brute-force search.
+        </p>
+      </article>
+      <article class="impact-card">
+        <div class="impact-card__icon">⚛️</div>
+        <h3>Quantum Search</h3>
+        <p>
+          Grover's Algorithm uses quantum superposition and interference to
+          increase the probability of finding the correct solution using fewer
+          search iterations than a classical computer.
+        </p>
+      </article>
+      <article class="impact-card">
+        <div class="impact-card__icon">📈</div>
+        <h3>Fewer Search Iterations</h3>
+        <p>
+          For a search space of N possible solutions, a classical computer may
+          require around N attempts, while Grover's Algorithm requires roughly
+          √N iterations, providing a quadratic speedup.
+        </p>
+      </article>
+      <article class="impact-card">
+        <div class="impact-card__icon">🔮</div>
+        <h3>Future Potential</h3>
+        <p>
+          Today's quantum computers cannot perform cryptocurrency mining using
+          Grover's Algorithm. However, it shows how future fault-tolerant quantum
+          computers could influence proof-of-work systems and cryptographic
+          research.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — MineX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="faq.css" />
+  <link rel="icon" type="image/x-icon" href="assets/images/logo-cryptoMiners.png" />
+  <script src="shared.js"></script>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+   <!-- Navigation -->
+  <header class="nav">
+    <div class="nav__brand">
+      <span class="nav__logo"><img src="assets/images/logo-cryptoMiners.png" alt="MineX logo" /></span>
+      <span class="nav__name">Mine<span class="accent">-X</span></span>
+    </div>
+
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="grovers-algorithm.html">Grover Algorithm</a>
+      <a href="sha1-generator.html">SHA-1 Generator</a>
+    </nav>
+
+    <a href="faq.html" class="btn btn--primary btn--sm">FAQ</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__content">
+      <p class="hero__tag">Frequently Asked Questions</p>
+      <h1 class="hero__title">
+        FAQ<br />
+        <span class="hero__title--accent">Answers to Common Questions</span>
+      </h1>
+      <p class="hero__desc">
+        Find answers to frequently asked questions about MineX, cryptocurrency mining, SHA-1 hashing, and Grover's Algorithm. Whether you're a beginner or experienced developer, we've got you covered.
+      </p>
+      <a href="#faq-content" class="btn btn--primary">Explore FAQs</a>
+    </div>
+    <div class="hero__visual">
+      <div class="question-mark">
+        <span class="question-mark__text">?</span>
+        <div class="question-mark__ring question-mark__ring--1"></div>
+        <div class="question-mark__ring question-mark__ring--2"></div>
+        <div class="question-mark__ring question-mark__ring--3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Categories -->
+  <section class="section" id="faq-content">
+    <div class="section__header">
+      <span class="section__tag">// HELP & SUPPORT</span>
+      <h2 class="section__title">Frequently Asked Questions</h2>
+      <p class="section__subtitle">
+        Quick answers to help you get the most out of MineX.
+      </p>
+    </div>
+
+    <!-- General Questions -->
+    <div class="faq-category">
+      <h3 class="faq-category__title">🌐 General Questions</h3>
+      <div class="faq-container">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What topics does MineX cover?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              MineX covers several key topics including: cryptocurrency mining basics, SHA-1 hashing algorithm, DUCO-S1 mining protocol, Proof-of-Work consensus, quantum computing fundamentals, and Grover's quantum search algorithm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHA-1 Generator Questions -->
+    <div class="faq-category">
+      <h3 class="faq-category__title">🔐 SHA-1 Hash Generator</h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is SHA-1?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that converts any input data into a fixed 160-bit (40 hexadecimal character) output. It's used extensively in cryptocurrency mining, blockchain technology, and digital signatures. The MineX SHA-1 generator lets you compute hashes for any text input.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>How does the SHA-1 generator work?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Simply enter any text in the input field and click "Generate Hash". The tool processes your input through the SHA-1 algorithm and outputs a 40-character hexadecimal hash. The same input always produces the same hash, making it deterministic and verifiable.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>Is my data private when I use the hash generator?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes! The SHA-1 generator runs entirely in your browser using JavaScript. Your data is never sent to any server or stored anywhere. All hashing is done locally on your device, ensuring complete privacy.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>Why is SHA-1 used in cryptocurrency mining?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              SHA-1 is used in cryptocurrency mining because it's fast, deterministic, and produces a fixed output size. Miners repeatedly hash different nonce values until they find a hash matching the network's difficulty target. While modern systems prefer SHA-256, SHA-1 remains important for understanding mining fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>Can I reverse a SHA-1 hash to get the original data?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              No, SHA-1 is a one-way function. It's cryptographically designed to be irreversible. Once data is hashed, there's no mathematical way to recover the original input. This property is crucial for security in blockchain and cryptocurrency systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mining Questions -->
+    <div class="faq-category">
+      <h3 class="faq-category__title">⛏ Cryptocurrency Mining</h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is cryptocurrency mining?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Cryptocurrency mining is the process of solving complex mathematical puzzles to validate transactions and create new blocks in a blockchain. Miners use computers to perform billions of hash calculations until they find a hash that meets the network's difficulty requirements, earning rewards in newly minted cryptocurrency.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is a nonce in mining?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              A nonce (number used once) is a value that miners incrementally change and include in hash calculations. Miners start with nonce = 0 and keep incrementing it until they find a hash that matches the difficulty target. Once found, that nonce proves the work was done.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is mining difficulty?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Mining difficulty is a parameter that determines how hard it is to find a valid hash. It's adjusted so that blocks are found at a consistent rate (e.g., one block every 10 minutes). Higher difficulty means more hash attempts are needed, requiring more computational work.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is Proof-of-Work?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Proof-of-Work (PoW) is a consensus mechanism where miners prove they've done computational work by solving difficult puzzles. It prevents spam, secures the blockchain, and ensures fairness because finding valid hashes requires real effort. Bitcoin and Duino Coin both use PoW.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantum Computing Questions -->
+    <div class="faq-category">
+      <h3 class="faq-category__title">⚛ Quantum Computing & Grover's Algorithm</h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is quantum computing?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Quantum computing harnesses the principles of quantum mechanics to process information differently from classical computers. While classical computers use bits (0 or 1), quantum computers use qubits that can exist in superposition (both 0 and 1 simultaneously), enabling faster solutions to certain types of problems.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What are qubits?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Qubits (quantum bits) are the basic units of quantum information. Unlike classical bits (0 or 1), qubits can exist in superposition—a combination of both 0 and 1 states—until measured. This property allows quantum computers to explore many possibilities simultaneously.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is Grover's Algorithm?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Grover's Algorithm is a quantum search algorithm that finds an item in an unsorted list faster than classical brute-force search. It achieves a quadratic speedup: for N items, it needs only √N steps instead of N. This makes it significant for cryptocurrency security and search problems.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>How does Grover's Algorithm work?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Grover's Algorithm uses two key quantum operations: the Oracle (marks the target state) and the Diffusion operator (amplifies the marked state's amplitude). By repeatedly applying these operations, the algorithm increases the probability of measuring the correct answer while decreasing the probability of wrong answers.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What is superposition?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Superposition is a quantum property where a qubit can be in multiple states simultaneously until measured. Once measured, it collapses to either 0 or 1. This allows quantum computers to explore many possibilities at once, enabling exponential speedups for certain algorithms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Questions -->
+    <div class="faq-category">
+      <h3 class="faq-category__title">💻 Technical Questions</h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>What technologies does MineX use?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              MineX is built with HTML5, CSS3, and vanilla JavaScript. The SHA-1 generator uses pure JavaScript for client-side hashing. All tools run in your browser without requiring any server-side processing, ensuring privacy and fast performance.
+            </p>
+          </div>
+        </div>
+
+    <!-- Contact & Support -->
+    <div class="faq-category">
+      <h3 class="faq-category__title">📞 Support & Contact</h3>
+      <div class="faq-container">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span class="faq-icon">+</span>
+            <h4>Is there documentation available?</h4>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Yes! Check out the <a href="https://github.com/arnavnarula-sys/MineX_CryptoMiners_DLDAVMSSchool/blob/main/README.md" target="_blank">README documentation</a> on GitHub. It includes setup instructions, feature explanations, and technical details about the project.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta__glow" aria-hidden="true"></div>
+    <h2 class="cta__title">Still Have Questions?</h2>
+    <p class="cta__desc">
+      Check our GitHub repository for more documentation, or open an issue to get help from the community.
+    </p>
+    <div class="cta__actions">
+      <a href="https://github.com/arnavnarula-sys/MineX_CryptoMiners_DLDAVMSSchool" target="_blank" class="btn btn--primary">Visit GitHub</a>
+      <a href="index.html" class="btn btn--ghost">Back to Home</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="faq.js"></script>
+</body>
+</html>
